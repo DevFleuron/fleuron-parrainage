@@ -229,7 +229,7 @@ export default function AmbassadorPage() {
       </section>
 
       <section className="bg-white py-14 px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto flex flex-col items-center gap-10">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-10">
           {/* ── Titre + trait ── */}
           <div className="flex flex-col items-center w-full gap-3">
             <h2
@@ -275,7 +275,7 @@ export default function AmbassadorPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2">
               {tvLogos.map((tv, i) => (
-                <img key={i} alt={tv.name} src={tv.logo} className="h-40 w-auto object-contain" />
+                <img key={i} alt={tv.name} src={tv.logo} className="w-auto h-35 object-contain" />
               ))}
             </div>
           </div>
