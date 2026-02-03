@@ -3,7 +3,7 @@ import Image from 'next/image'
 import FormParrainage from '@/components/FormParrainage'
 import FormCommande from '@/components/FormCommande'
 import FormApéritif from '@/components/FormApperitif'
-import Footer from '@/components/Foot'
+import Footer from '@/components/Footer'
 
 export default function AmbassadorPage() {
   const installations = [
@@ -76,7 +76,7 @@ export default function AmbassadorPage() {
           {/* Texte avec padding */}
           <div className="px-4 lg:px-8 py-6 lg:py-10 flex flex-col xl:ml-15  gap-4">
             <h1
-              className="text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight bg-clip-text text-transparent"
+              className="text-4xl lg:text-6xl font-extrabold leading-tight bg-clip-text text-transparent"
               style={{
                 backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
               }}
@@ -157,7 +157,7 @@ export default function AmbassadorPage() {
           </div>
 
           {/* ── Bloc cartes cadeaux ── */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 bg-gray-50 rounded-2xl px-6 py-2 w-full">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:gap-20 bg-gray-50 rounded-2xl px-6 py-2 w-full">
             {/* Visuel carte cadeau placeholder */}
             <div className="shrink-0">
               <Image

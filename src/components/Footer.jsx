@@ -48,7 +48,7 @@ export default function Footer() {
 
       {/* ── Barre bas : copyright + liens légaux ── */}
       <div className="border-t border-gray-200 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 flex-wrap">
+        <div className="max-w-6xl mx-auto px-4 lg:px-8 py-4 flex flex-col-2 sm:flex-row items-center justify-center gap-2 sm:gap-6 flex-wrap">
           <span className="text-xs text-gray-500">© Copyright 2024</span>
           <a href="#" className="text-xs text-gray-500 hover:text-gray-700 hover:underline">
             Mentions légales
