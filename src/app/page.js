@@ -234,7 +234,7 @@ export default function AmbassadorPage() {
           {/* ── Titre + trait ── */}
           <div className="flex flex-col w-full gap-3">
             <h2
-              className="text-2xl sm:text-4xl font-extrabold leading-tight bg-clip-text text-transparent"
+              className="text-2xl sm:text-5xl font-extrabold leading-tight bg-clip-text text-transparent"
               style={{
                 backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
               }}
@@ -272,7 +272,7 @@ export default function AmbassadorPage() {
             >
               Plus 12 millions de téléspectateurs
             </h3>
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap justify-center items-center gap-2">
               {tvLogos.map((tv, i) => (
                 <img key={i} alt={tv.name} src={tv.logo} className="w-auto h-25 object-contain" />
               ))}
@@ -310,7 +310,7 @@ export default function AmbassadorPage() {
           <div className="w-92 h-1 bg-[#f19312] rounded-full"></div>
 
           {/* Texte info */}
-          <p className="text-base md:text-lg text-gray-600 max-w-4xl">
+          <p className="text-base mt-10 mb-10² md:text-lg text-gray-600 max-w-5xl">
             <span className="font-bold text-gray-800">
               Fleuron Industries prend en charge 5€ par participants.
             </span>{' '}

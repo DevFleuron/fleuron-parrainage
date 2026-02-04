@@ -18,10 +18,10 @@ export default function Footer() {
 
         {/* Liens téléchargement */}
         <div className="flex flex-col gap-3">
-          <a href="#" className="text-sm text-blue-800 font-semibold underline hover:text-blue-900">
+          <a href="#" className="text-sm text-blue-800 font-semibold hover:text-blue-900">
             Télécharger la plaquette ambassadeur
           </a>
-          <a href="#" className="text-sm text-blue-800 font-semibold underline hover:text-blue-900">
+          <a href="#" className="text-sm text-blue-800 font-semibold hover:text-blue-900">
             Télécharger le contrat
           </a>
         </div>
