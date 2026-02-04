@@ -70,7 +70,7 @@ export default function AmbassadorPage() {
         <Image src="/logo-fleuron.webp" height={60} width={200} className="lg:h-auto" />
       </header>
       {/* Wrapper full-width pour que l'image absolute se refera à lui */}
-      <section className="w-full flex flex-col lg:flex-row">
+      <section className="w-full flex flex-col lg:flex-row lg:pb-20">
         {/* ── Colonne gauche ── */}
         <div className="w-full lg:w-1/2 flex flex-col">
           {/* Texte avec padding */}
@@ -91,13 +91,13 @@ export default function AmbassadorPage() {
           </div>
 
           {/* Image — pas de padding, colle à gauche */}
-          <div className="overflow-hidden rounded-r-2xl shadow-md">
+          <div className="w-[85%] mx-0 lg:w-full  overflow-hidden">
             <Image
               src="/image-hero1.webp"
               alt="Maison avec panneaux solaires"
               width={800}
               height={650}
-              className="w-full h-56 sm:h-72 lg:h-100 object-cover"
+              className="w-full h-56 sm:h-90 sm:w-190 lg:h-110 rounded-r-2xl object-cover"
               priority
             />
           </div>
@@ -322,7 +322,7 @@ export default function AmbassadorPage() {
         {/* ── Layout deux colonnes : image gauche + form droite ── */}
         <div className="flex flex-col lg:flex-row">
           {/* Image — colle à gauche, pas de padding */}
-          <div className="w-full lg:w-1/2 overflow-hidden rounded-r-2xl">
+          <div className="-ml-12 w-full lg:ml-0 lg:w-1/2 overflow-hidden rounded-r-2xl">
             <Image
               src="/aperitif-hero.webp"
               alt="Deux hommes qui partagent un petit déjeuner"
