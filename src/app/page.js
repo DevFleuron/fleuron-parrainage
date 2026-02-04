@@ -66,7 +66,7 @@ export default function AmbassadorPage() {
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* ── Header / Logo ── */}
-      <header className="px-4 lg:px-8 pt-6 pb-2 max-w-7xl">
+      <header className="px-4 lg:px-8 pt-6 max-w-5xl">
         <Image src="/logo-fleuron.webp" height={60} width={200} className="lg:h-auto" />
       </header>
       {/* Wrapper full-width pour que l'image absolute se refera à lui */}
@@ -104,7 +104,7 @@ export default function AmbassadorPage() {
         </div>
 
         {/* ── Colonne droite : formulaire ── */}
-        <div className="w-full lg:w-1/2 px-4 lg:px-12 py-6 lg:py-10 flex items-start justify-center">
+        <div className="w-full lg:w-1/2 px-4 lg:px-12 py-6 lg:py-0 flex items-start justify-center">
           <div className="w-full max-w-lg">
             <FormParrainage />
           </div>

@@ -34,7 +34,7 @@ export default function Footer() {
           <p className="text-sm text-gray-600">
             Par téléphone :{' '}
             <a href="tel:+33660297317" className="font-medium hover:underline">
-              06 60 29 73 17
+              09 39 38 98 37
             </a>
           </p>
           <p className="text-sm text-gray-600">
