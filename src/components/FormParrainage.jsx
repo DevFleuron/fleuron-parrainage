@@ -28,11 +28,11 @@ export default function FormParrainage() {
   return (
     <div className="flex-1 max-w-lg w-full">
       {/* Title */}
-      <h2 className="text-3xl font-semibold text-[#743d75] text-center mb-1">
+      <h2 className="text-3xl font-semibold text-[#743d75] text-center">
         Formulaire de parrainage
       </h2>
-      <div className="w-full flex justify-center items-center mx-auto center mb-2">
-        <Image src="/sourlignement.webp" width={200} height={80} />
+      <div className="w-full flex justify-center items-center mx-auto center">
+        <Image src="/sourlignement.webp" className="h-13 w-50" width={500} height={100} />
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-5">

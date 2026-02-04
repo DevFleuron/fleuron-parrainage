@@ -73,9 +73,9 @@ export default function FormCommande() {
           Choix du supports de communication :
         </p>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex items-center flex-col gap-3 w-full">
           {supports.map((support) => (
-            <div key={support.id} className="flex items-center gap-3 justify-center flex-wrap">
+            <div key={support.id} className="flex items-center gap-3 justify-start w-full max-w-md">
               <select
                 value={quantities[support.id]}
                 onChange={(e) => handleQtyChange(support.id, e.target.value)}

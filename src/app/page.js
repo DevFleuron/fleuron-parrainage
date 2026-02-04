@@ -10,7 +10,7 @@ export default function AmbassadorPage() {
     {
       image: '/panneaux-solaires.webp',
       description: (
-        <p className="text-base">
+        <p className="text-base md:text-lg">
           Panneaux photovoltaïques ={' '}
           <span className="font-bold text-black">
             50€ par KwC jusqu&apos;à 9KwC et bien plus à gagner sur les grandes installations
@@ -22,7 +22,7 @@ export default function AmbassadorPage() {
     {
       image: '/ITE-LP.webp',
       description: (
-        <p className="text-base">
+        <p className="text-base md:text-lg">
           Travaux d&apos;isolation extérieur d&apos;une maison (ITE) ={' '}
           <span className="font-bold text-black">2€/m²</span>
         </p>
@@ -31,7 +31,7 @@ export default function AmbassadorPage() {
     {
       image: '/MaisonFleuron - LP.webp',
       description: (
-        <p className="text-base">
+        <p className="text-base md:text-lg">
           Maison Fleuron = <span className="font-bold text-black">250€</span>
         </p>
       ),
@@ -39,7 +39,7 @@ export default function AmbassadorPage() {
     {
       image: '/PAC - LP.webp',
       description: (
-        <p className="text-base">
+        <p className="text-base md:text-lg">
           Pompe à chaleur = <span className="font-bold text-black">150€</span>
         </p>
       ),
@@ -78,14 +78,13 @@ export default function AmbassadorPage() {
             <h1
               className="text-4xl lg:text-6xl font-extrabold leading-tight bg-clip-text text-transparent"
               style={{
-                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
+                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
               }}
             >
-              Votre interface
-              <span className="block">Ambassadeur</span>
+              Votre interface Ambassadeur
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-left font-semibold">
+            <p className="text-base md:text-lg leading-relaxed text-left font-semibold">
               Ce formulaire permet d&apos;horodater votre demande de parrainage afin de déclencher
               l&apos;attribution de vos gains.
             </p>
@@ -117,27 +116,27 @@ export default function AmbassadorPage() {
         <div className="max-w-6xl mx-auto flex flex-col items-center gap-8">
           {/* ── Titre ── */}
           <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center leading-snug bg-clip-text text-transparent"
+            className="text-2xl md:text-4xl font-extrabold text-center leading-snug bg-clip-text text-transparent"
             style={{
-              backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
+              backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
             }}
           >
             Complétez vos revenus par installations réalisées !
           </h2>
 
           {/* ── Sous-titre ── */}
-          <p className="text-sm sm:text-2xl font-bold uppercase tracking-wide text-center">
+          <h3 className="text-lg md:text-2xl font-bold uppercase tracking-wide text-center">
             Pour les particuliers et professionnels
-          </p>
+          </h3>
 
           {/* ── Grille 2x2 installations ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             {installations.map((item, i) => (
               <div key={i} className="flex flex-col items-center gap-3">
                 <div
                   className="rounded-xl p-[2px] w-full shadow-md"
                   style={{
-                    background: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
+                    background: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
                   }}
                 >
                   {/* Image avec bg-white pour "couper" le gradient et ne laisser que la bordure */}
@@ -147,17 +146,17 @@ export default function AmbassadorPage() {
                       alt={`Installation ${i + 1}`}
                       width={400}
                       height={280}
-                      className="w-full h-62 object-cover"
+                      className="w-full h-70 object-cover"
                     />
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 text-center max-w-xs">{item.description}</p>
+                <p className="text-sm text-gray-600 text-justify max-w-lg">{item.description}</p>
               </div>
             ))}
           </div>
 
           {/* ── Bloc cartes cadeaux ── */}
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:gap-20 bg-gray-50 rounded-2xl px-6 py-2 w-full">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:gap-20 rounded-2xl px-6 py-2 w-full">
             {/* Visuel carte cadeau placeholder */}
             <div className="shrink-0">
               <Image
@@ -170,12 +169,14 @@ export default function AmbassadorPage() {
             </div>
 
             {/* Texte */}
-            <div className="flex flex-col gap-1 text-center sm:text-left">
-              <p className="font-bold text-gray-800 text-xl">
+            <div className="flex flex-col gap-1 text-left sm:text-left">
+              <p className="font-bold text-gray-800 text-base md:text-lg">
                 Recevez vos cartes cadeaux multi-enseignes
               </p>
-              <p className="text-lg text-gray-500">Valables en magasin et sur internet</p>
-              <p className="text-lg text-gray-500">Dans plus de 200 enseignes</p>
+              <p className="text-base md:text-lg text-gray-500">
+                Valables en magasin et sur internet
+              </p>
+              <p className="text-base md:text-lg text-gray-500">Dans plus de 200 enseignes</p>
             </div>
           </div>
 
@@ -195,7 +196,7 @@ export default function AmbassadorPage() {
           </div>
 
           {/* ── Phrase finale ── */}
-          <p className="text-base sm:text-lg text-gray-600 text-center max-w-md">
+          <p className="text-base md:text-lg text-gray-600 text-center max-w-md">
             Certains Ambassadeurs génèrent déjà{' '}
             <span className="font-bold text-black">
               plusieurs milliers d&apos;euros chaque mois
@@ -208,18 +209,18 @@ export default function AmbassadorPage() {
       <section className="bg-gray-100 py-14 px-4 lg:px-8">
         <div className="max-w-3xl mx-auto flex flex-col items-center gap-8">
           {/* ── Titre ── */}
-          <div className="flex flex-col items-center gap-2">
-            <h2
-              className="text-2xl sm:text-3xl font-extrabold text-center bg-clip-text text-transparent"
-              style={{
-                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
-              }}
-            >
+          <div className="flex flex-col items-center">
+            <h2 className="w-full text-2xl sm:text-4xl font-bold text-center text-[#743d75]">
               Commander gratuitement vos communications
             </h2>
             {/* Trait orange sous le titre */}
-            <div className="w-full flex justify-center items-center mx-auto center mb-2">
-              <Image src="/sourlignement.webp" width={200} height={80} />
+            <div className="w-full flex justify-center items-center mx-auto center">
+              <Image
+                src="/sourlignement.webp"
+                className="h-20 w-60 lg:h-20 lg:w-70"
+                width={280}
+                height={80}
+              />
             </div>
           </div>
 
@@ -229,32 +230,30 @@ export default function AmbassadorPage() {
       </section>
 
       <section className="bg-white py-14 px-4 lg:px-8">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-10">
+        <div className="max-w-4xl mx-auto flex flex-col gap-10">
           {/* ── Titre + trait ── */}
-          <div className="flex flex-col items-center w-full gap-3">
+          <div className="flex flex-col w-full gap-3">
             <h2
-              className="text-3xl sm:text-4xl font-extrabold leading-tight text-center bg-clip-text text-transparent"
+              className="text-2xl sm:text-4xl font-extrabold leading-tight bg-clip-text text-transparent"
               style={{
-                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
+                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
               }}
             >
               Une visibilité exceptionnelle
             </h2>
-            <div className="w-full flex justify-center items-center mx-auto center mb-2">
-              <Image src="/sourlignement.webp" width={200} height={80} />
-            </div>
+            <div className="w-92 h-1 bg-[#f19312] rounded-full"></div>
           </div>
 
           {/* ── Bloc TikTok ── */}
           <div className="flex flex-col items-center gap-2 w-full">
-            <p
+            <h3
               className="text-xl sm:text-3xl font-extrabold text-center bg-clip-text text-transparent"
               style={{
-                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
+                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
               }}
             >
               Plus de 35 millions de vues
-            </p>
+            </h3>
             <img
               src="/Logo - TikTok.webp"
               alt="Logo TikTok"
@@ -265,31 +264,31 @@ export default function AmbassadorPage() {
 
           {/* ── Bloc TV ── */}
           <div className="flex flex-col items-center gap-4 w-full">
-            <p
+            <h3
               className="text-xl sm:text-3xl font-extrabold text-center bg-clip-text text-transparent"
               style={{
-                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
+                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
               }}
             >
               Plus 12 millions de téléspectateurs
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            </h3>
+            <div className="flex flex-wrap items-center gap-2">
               {tvLogos.map((tv, i) => (
-                <img key={i} alt={tv.name} src={tv.logo} className="w-auto h-35 object-contain" />
+                <img key={i} alt={tv.name} src={tv.logo} className="w-auto h-25 object-contain" />
               ))}
             </div>
           </div>
 
           {/* ── Bloc YouTube ── */}
           <div className="flex flex-col items-center gap-3 w-full">
-            <p
+            <h3
               className="text-xl sm:text-3xl font-extrabold text-center bg-clip-text text-transparent"
               style={{
-                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
+                backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
               }}
             >
               Plus de 2 millions de vues
-            </p>
+            </h3>
             <img src="/logo-youtube.webp" alt="YouTube" className="h-50 w-auto object-contain" />
           </div>
         </div>
@@ -298,9 +297,9 @@ export default function AmbassadorPage() {
         {/* ── Titre + trait + texte info avec padding ── */}
         <div className="max-w-5xl mx-auto px-4 lg:px-8 pt-12 pb-6 flex flex-col gap-4">
           <h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-snug bg-clip-text text-transparent"
+            className="text-2xl sm:text-4xl font-extrabold leading-snug bg-clip-text text-transparent"
             style={{
-              backgroundImage: 'linear-gradient(135deg, #72417d 0%, #e07856 100%)',
+              backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
             }}
           >
             Partager un apéritif ou un petit déjeuner avec vos voisins pour parler de votre
@@ -308,10 +307,10 @@ export default function AmbassadorPage() {
           </h2>
 
           {/* Trait orange */}
-          <div className="w-32 h-1 bg-orange-500 rounded-full"></div>
+          <div className="w-92 h-1 bg-[#f19312] rounded-full"></div>
 
           {/* Texte info */}
-          <p className="text-sm sm:text-base text-gray-600 max-w-2xl">
+          <p className="text-base md:text-lg text-gray-600 max-w-4xl">
             <span className="font-bold text-gray-800">
               Fleuron Industries prend en charge 5€ par participants.
             </span>{' '}
