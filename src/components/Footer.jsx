@@ -32,7 +32,10 @@ export default function Footer() {
             Pour suivre vos parrainage contactez-nous :
           </p>
           <p className="text-sm text-gray-600">
-            Par téléphone : <span className="font-medium">06 60 29 73 17</span>
+            Par téléphone :{' '}
+            <a href="tel:+33660297317" className="font-medium hover:underline">
+              06 60 29 73 17
+            </a>
           </p>
           <p className="text-sm text-gray-600">
             Par email :{' '}

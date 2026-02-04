@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image'
-import FormParrainage from '@/components/FormParrainage'
-import FormCommande from '@/components/FormCommande'
-import FormApéritif from '@/components/FormApperitif'
+import FormParrainage from '@/components/Formulaires/FormParrainage'
+import FormCommande from '@/components/Formulaires/FormCommande'
+import FormApéritif from '@/components/Formulaires/FormApperitif'
 import Footer from '@/components/Footer'
 
 export default function AmbassadorPage() {

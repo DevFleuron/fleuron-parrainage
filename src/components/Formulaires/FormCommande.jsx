@@ -21,17 +21,79 @@ export default function FormCommande() {
     Object.fromEntries(supports.map((s) => [s.id, s.defaultQty]))
   )
 
+  const [errors, setErrors] = useState({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [successMessage, setSuccessMessage] = useState('')
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+    // Efface l'erreur du champ modifié
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: '' })
+    }
   }
 
   const handleQtyChange = (id, value) => {
     setQuantities({ ...quantities, [id]: Number(value) })
   }
 
-  const handleSubmit = (e) => {
+  const validateForm = () => {
+    const newErrors = {}
+
+    // Tous les champs obligatoires
+    if (!formData.nom.trim()) {
+      newErrors.nom = 'Le nom est requis'
+    }
+    if (!formData.prenom.trim()) {
+      newErrors.prenom = 'Le prénom est requis'
+    }
+    if (!formData.codeParrainage.trim()) {
+      newErrors.codeParrainage = 'Le code de parrainage est requis'
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Commande:', { ...formData, quantities })
+    setSuccessMessage('')
+
+    if (!validateForm()) {
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/send-commande', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, quantities }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Erreur lors de l'envoi")
+      }
+
+      // Succès : vider le formulaire et afficher le message
+      setFormData({
+        nom: '',
+        prenom: '',
+        codeParrainage: '',
+      })
+      setQuantities(Object.fromEntries(supports.map((s) => [s.id, s.defaultQty])))
+      setSuccessMessage('✓ Votre commande a bien été envoyée !')
+
+      // Masquer le message après 5 secondes
+      setTimeout(() => setSuccessMessage(''), 5000)
+    } catch (error) {
+      setErrors({ submit: error.message })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const inputClass =
@@ -49,6 +111,8 @@ export default function FormCommande() {
           onChange={handleChange}
           className={inputClass}
         />
+        {errors.nom && <p className="text-red-500 text-xs -mt-2">{errors.nom}</p>}
+
         <input
           type="text"
           name="prenom"
@@ -57,6 +121,8 @@ export default function FormCommande() {
           onChange={handleChange}
           className={inputClass}
         />
+        {errors.prenom && <p className="text-red-500 text-xs -mt-2">{errors.prenom}</p>}
+
         <input
           type="text"
           name="codeParrainage"
@@ -65,6 +131,9 @@ export default function FormCommande() {
           onChange={handleChange}
           className={inputClass}
         />
+        {errors.codeParrainage && (
+          <p className="text-red-500 text-xs -mt-2">{errors.codeParrainage}</p>
+        )}
       </div>
 
       {/* ── Choix des supports ── */}
@@ -100,13 +169,28 @@ export default function FormCommande() {
         </div>
       </div>
 
+      {/* Message de succès */}
+      {successMessage && (
+        <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm">
+          {successMessage}
+        </div>
+      )}
+
+      {/* Erreur générale */}
+      {errors.submit && (
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+          {errors.submit}
+        </div>
+      )}
+
       {/* ── Bouton Envoyer ── */}
       <div className="flex justify-center pt-2">
         <button
           type="submit"
-          className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-12 py-3 rounded-md transition-colors duration-200 shadow-md cursor-pointer"
+          disabled={isSubmitting}
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-12 py-3 rounded-md transition-colors duration-200 shadow-md cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
-          Envoyer
+          {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
         </button>
       </div>
     </form>
