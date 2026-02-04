@@ -150,7 +150,7 @@ export default function AmbassadorPage() {
                     />
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 text-justify max-w-lg">{item.description}</p>
+                <p className="text-sm text-gray-600 text-center max-w-lg">{item.description}</p>
               </div>
             ))}
           </div>
