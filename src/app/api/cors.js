@@ -1,4 +1,4 @@
-const ALLOWED_ORIGIN = 'https://ambassadeurs.fleuronindustries.com'
+const ALLOWED_ORIGIN = 'https://ambassadeurs.fleuronindustries.fr'
 
 export function getCorsHeaders(origin) {
   const headers = {
