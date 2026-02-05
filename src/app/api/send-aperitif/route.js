@@ -1,6 +1,14 @@
 import nodemailer from 'nodemailer'
+import { getCorsHeaders, handleCorsOptions } from '../cors'
+
+// Gère les requêtes OPTIONS (preflight)
+export async function OPTIONS(request) {
+  return handleCorsOptions(request)
+}
 
 export async function POST(request) {
+  const origin = request.headers.get('origin')
+
   try {
     const body = await request.json()
     const { ambassadeur, participants } = body
@@ -9,7 +17,7 @@ export async function POST(request) {
     if (!ambassadeur || !participants || participants.length === 0) {
       return Response.json(
         { error: "L'ambassadeur et au moins un participant sont requis" },
-        { status: 400 }
+        { status: 400, headers: getCorsHeaders(origin) }
       )
     }
 
@@ -65,12 +73,15 @@ export async function POST(request) {
     // Envoi de l'email
     await transporter.sendMail(mailOptions)
 
-    return Response.json({ success: true, message: 'Demande envoyée avec succès' })
+    return Response.json(
+      { success: true, message: 'Demande envoyée avec succès' },
+      { headers: getCorsHeaders(origin) }
+    )
   } catch (error) {
     console.error('Erreur envoi apéritif:', error)
     return Response.json(
       { error: "Erreur lors de l'envoi de la demande", details: error.message },
-      { status: 500 }
+      { status: 500, headers: getCorsHeaders(origin) }
     )
   }
 }

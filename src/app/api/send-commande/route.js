@@ -1,13 +1,24 @@
 import nodemailer from 'nodemailer'
+import { getCorsHeaders, handleCorsOptions } from '../cors'
+
+// Gère les requêtes OPTIONS (preflight)
+export async function OPTIONS(request) {
+  return handleCorsOptions(request)
+}
 
 export async function POST(request) {
+  const origin = request.headers.get('origin')
+
   try {
     const body = await request.json()
     const { nom, prenom, codeParrainage, quantities } = body
 
     // Validation côté serveur
     if (!nom || !prenom || !codeParrainage) {
-      return Response.json({ error: 'Tous les champs sont requis' }, { status: 400 })
+      return Response.json(
+        { error: 'Tous les champs sont requis' },
+        { status: 400, headers: getCorsHeaders(origin) }
+      )
     }
 
     // Configuration Nodemailer
@@ -68,12 +79,15 @@ export async function POST(request) {
     // Envoi de l'email
     await transporter.sendMail(mailOptions)
 
-    return Response.json({ success: true, message: 'Commande envoyée avec succès' })
+    return Response.json(
+      { success: true, message: 'Commande envoyée avec succès' },
+      { headers: getCorsHeaders(origin) }
+    )
   } catch (error) {
     console.error('Erreur envoi commande:', error)
     return Response.json(
       { error: "Erreur lors de l'envoi de la commande", details: error.message },
-      { status: 500 }
+      { status: 500, headers: getCorsHeaders(origin) }
     )
   }
 }
