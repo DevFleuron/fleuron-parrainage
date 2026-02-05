@@ -66,13 +66,17 @@ export default function AmbassadorPage() {
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* ── Header / Logo ── */}
-      <header className="px-4 lg:px-8 pt-6 max-w-5xl">
-        <Image src="/logo-fleuron.webp" height={60} width={200} className="lg:h-auto" />
-      </header>
+      <header className=" pt-6 max-w-5xl"></header>
       {/* Wrapper full-width pour que l'image absolute se refera à lui */}
       <section className="w-full flex flex-col lg:flex-row lg:pb-20">
         {/* ── Colonne gauche ── */}
         <div className="w-full lg:w-1/2 flex flex-col">
+          <Image
+            src="/logo-fleuron.webp"
+            height={60}
+            width={240}
+            className="px-4 lg:px-8 lg:h-auto"
+          />
           {/* Texte avec padding */}
           <div className="px-4 lg:px-8 py-6 lg:py-10 flex flex-col xl:ml-15  gap-4">
             <h1

@@ -17,14 +17,14 @@ export default function Footer() {
         </div>
 
         {/* Liens téléchargement */}
-        <div className="flex flex-col gap-3">
+        {/* <div className="flex flex-col gap-3">
           <a href="#" className="text-sm text-blue-800 font-semibold hover:text-blue-900">
             Télécharger la plaquette ambassadeur
           </a>
           <a href="#" className="text-sm text-blue-800 font-semibold hover:text-blue-900">
             Télécharger le contrat
           </a>
-        </div>
+        </div> */}
 
         {/* Contact */}
         <div className="flex flex-col gap-2">

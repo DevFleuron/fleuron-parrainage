@@ -19,7 +19,7 @@ export async function POST(request) {
       port: process.env.SMTP_PORT || 587,
       secure: false,
       auth: {
-        user: process.env.SMTP_USER || 'dev.web@fleuronindustries.com',
+        user: process.env.SMTP_USER || 'ambassadeurs@fleuronindustries.com',
         pass: process.env.SMTP_PASS,
       },
       tls: {
@@ -35,8 +35,8 @@ export async function POST(request) {
 
     // Contenu de l'email
     const mailOptions = {
-      from: 'dev.web@fleuronindustries.com',
-      to: 'dev.web@fleuronindustries.com',
+      from: 'ambassadeurs@fleuronindustries.com',
+      to: 'ambassadeurs@fleuronindustries.com',
       subject: 'Nouvelle demande apéritif/petit déjeuner - Fleuron Industries',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
