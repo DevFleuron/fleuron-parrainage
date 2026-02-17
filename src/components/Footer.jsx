@@ -29,7 +29,7 @@ export default function Footer() {
         {/* Contact */}
         <div className="flex flex-col gap-2">
           <p className="text-sm font-bold text-gray-800">
-            Pour suivre vos parrainage contactez-nous :
+            Pour suivre vos parrainages contactez-nous :
           </p>
           <p className="text-sm text-gray-600">
             Par téléphone :{' '}

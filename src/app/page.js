@@ -10,38 +10,93 @@ export default function AmbassadorPage() {
     {
       image: '/panneaux-solaires.webp',
       description: (
-        <p className="text-base md:text-lg">
-          Panneaux photovoltaïques ={' '}
-          <span className="font-bold text-black">
-            50€ par KwC jusqu&apos;à 9KwC et bien plus à gagner sur les grandes installations
-            professionnelles
-          </span>
-        </p>
-      ),
-    },
-    {
-      image: '/ITE-LP.webp',
-      description: (
-        <p className="text-base md:text-lg">
-          Travaux d&apos;isolation extérieur d&apos;une maison (ITE) ={' '}
-          <span className="font-bold text-black">2€/m²</span>
-        </p>
+        <div className="text-sm w-full">
+          <p className="font-bold text-black mb-2 text-center">Panneaux photovoltaïques</p>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-gray-700">
+            <span className="whitespace-nowrap">
+              3KwC = 7 900 € → <span className="font-bold text-black">Bonus 150 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              12KwC = 18 900 € → <span className="font-bold text-black">Bonus 600 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              6KwC = 11 900 € → <span className="font-bold text-black">Bonus 300 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              15KwC = 21 900 € → <span className="font-bold text-black">Bonus 750 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              9KwC = 14 900 € → <span className="font-bold text-black">Bonus 450 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              18KwC = 26 900 € → <span className="font-bold text-black">Bonus 900 €</span>
+            </span>
+          </div>
+          <p className="text-xs italic text-gray-500 mt-2 text-center">
+            (pose et démarches administratives incluses)
+          </p>
+        </div>
       ),
     },
     {
       image: '/MaisonFleuron - LP.webp',
       description: (
-        <p className="text-base md:text-lg">
-          Maison Fleuron = <span className="font-bold text-black">250€</span>
-        </p>
+        <div className="text-sm w-full">
+          <p className="font-bold text-black mb-2 text-center">Maison Fleuron</p>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-gray-700">
+            <span className="whitespace-nowrap">
+              20 m² : 34 900 € HT → <span className="font-bold text-black">Bonus 250 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              80 m² : 89 900 € HT → <span className="font-bold text-black">Bonus 900 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              44 m² : 44 900 € HT → <span className="font-bold text-black">Bonus 500 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              100 m² : 124 900 € HT → <span className="font-bold text-black">Bonus 1 050 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              60 m² : 79 900 € HT → <span className="font-bold text-black">Bonus 750 €</span>
+            </span>
+            <span className="whitespace-nowrap">
+              120 m² : 134 900 € HT → <span className="font-bold text-black">Bonus 1 200 €</span>
+            </span>
+          </div>
+        </div>
+      ),
+    },
+
+    {
+      image: '/ITE-LP.webp',
+      description: (
+        <div className="text-sm w-full text-center">
+          <p className="text-gray-700">
+            Isolation des murs par l&apos;extérieur (ITE) ={' '}
+            <span className="font-bold text-black">2 €/m²</span>
+          </p>
+        </div>
       ),
     },
     {
+      image: '/batterie-externe-solaire.webp',
+      description: (
+        <div className="text-sm w-full text-center">
+          <p className="font-bold text-black mb-2">
+            Batterie de stockage = <strong>150 €</strong>
+          </p>
+        </div>
+      ),
+    },
+
+    {
       image: '/PAC - LP.webp',
       description: (
-        <p className="text-base md:text-lg">
-          Pompe à chaleur = <span className="font-bold text-black">150€</span>
-        </p>
+        <div className="text-sm w-full text-center">
+          <p className="text-gray-700">
+            Pompe à chaleur = <span className="font-bold text-black">150 €</span>
+          </p>
+        </div>
       ),
     },
   ]
@@ -66,13 +121,13 @@ export default function AmbassadorPage() {
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* ── Header / Logo ── */}
-      <header className=" pt-6 max-w-5xl"></header>
       {/* Wrapper full-width pour que l'image absolute se refera à lui */}
-      <section className="w-full flex flex-col lg:flex-row lg:pb-20">
+      <section className="w-full flex flex-col lg:flex-row lg:pb-20 pt-5">
         {/* ── Colonne gauche ── */}
         <div className="w-full lg:w-1/2 flex flex-col">
           <Image
             src="/logo-fleuron.webp"
+            alt="Logo Fleuron Industries"
             height={60}
             width={240}
             className="px-4 lg:px-8 lg:h-auto"
@@ -138,7 +193,7 @@ export default function AmbassadorPage() {
             {installations.map((item, i) => (
               <div key={i} className="flex flex-col items-center gap-3">
                 <div
-                  className="rounded-xl p-[2px] w-full shadow-md"
+                  className="rounded-xl p-0.5 w-full shadow-md"
                   style={{
                     background: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
                   }}
@@ -154,7 +209,7 @@ export default function AmbassadorPage() {
                     />
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 text-center max-w-lg">{item.description}</p>
+                <div className="text-sm text-gray-600 text-center max-w-lg">{item.description}</div>
               </div>
             ))}
           </div>
@@ -165,7 +220,7 @@ export default function AmbassadorPage() {
             <div className="shrink-0">
               <Image
                 src="/Carte-Cadeau-LP.webp"
-                alt="Carte cadeau multi-enseignes"
+                alt="Carte cadeau multi-enseignes valable dans plus de 200 enseignes"
                 width={160}
                 height={80}
                 className="object-contain"
@@ -238,18 +293,18 @@ export default function AmbassadorPage() {
           {/* ── Titre + trait ── */}
           <div className="flex flex-col w-full gap-3">
             <h2
-              className="text-2xl sm:text-5xl font-extrabold leading-tight bg-clip-text text-transparent"
+              className="text-2xl sm:text-4xl font-extrabold leading-tight bg-clip-text text-transparent"
               style={{
                 backgroundImage: 'linear-gradient(135deg, #72417d 0%, #f19312 100%)',
               }}
             >
               Une visibilité exceptionnelle
             </h2>
-            <div className="w-92 h-1 bg-[#f19312] rounded-full"></div>
+            <div className="w-92 h-1 bg-[#f19312]  rounded-full"></div>
           </div>
 
           {/* ── Bloc TikTok ── */}
-          <div className="flex flex-col items-center gap-2 w-full">
+          <div className="flex flex-col items-center gap-2 w-full mt-15">
             <h3
               className="text-xl sm:text-3xl font-extrabold text-center bg-clip-text text-transparent"
               style={{
@@ -263,7 +318,6 @@ export default function AmbassadorPage() {
               alt="Logo TikTok"
               className="h-20 w-auto object-contain"
             />
-            <Image />
           </div>
 
           {/* ── Bloc TV ── */}
@@ -284,7 +338,7 @@ export default function AmbassadorPage() {
           </div>
 
           {/* ── Bloc YouTube ── */}
-          <div className="flex flex-col items-center gap-3 w-full">
+          <div className="flex flex-col items-center w-full">
             <h3
               className="text-xl sm:text-3xl font-extrabold text-center bg-clip-text text-transparent"
               style={{
@@ -314,7 +368,7 @@ export default function AmbassadorPage() {
           <div className="w-92 h-1 bg-[#f19312] rounded-full"></div>
 
           {/* Texte info */}
-          <p className="text-base mt-10 mb-10² md:text-lg text-gray-600 max-w-5xl">
+          <p className="text-base mt-2 mb-5 md:text-lg text-gray-600 max-w-5xl">
             <span className="font-bold text-gray-800">
               Fleuron Industries prend en charge 5€ par participants.
             </span>{' '}
